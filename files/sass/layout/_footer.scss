@@ -1,0 +1,101 @@
+.footer {
+	background-color: $color-secondary-dark;
+	color: $color-white;
+	padding: 15rem 0;
+	position: relative;
+
+	&__rows {
+		& > * {
+			width: 100%;
+			margin: 0 auto;
+			margin-bottom: 2.5rem;
+			text-align: center;
+		}
+	}
+
+	&__navigation {
+		width: 100%;
+	}
+
+	@include responsive(phone) {
+		padding: 8rem;
+	}
+
+	&__list {
+		list-style-type: none;
+		width: $grid-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		@include responsive(tab-port) {
+			max-width: 50rem;
+			padding: 0 3rem;
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		font-size: 1.5rem;
+		font-weight: 300;
+		text-align: center;
+
+		@include responsive(phone) {
+			padding-top: 2rem;
+		}
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			color: $color-primary-dark;
+			text-decoration: none;
+			transition: color 0.4s ease;
+		}
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	&__copyright {
+		width: $grid-width;
+		color: $color-primary;
+		font-weight: 300;
+		font-size: 1.4rem;
+		padding: 0 20rem;
+		text-align: center;
+
+		@include responsive(tab-port) {
+			max-width: 50rem;
+			padding: 0 0rem;
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+			flex-direction: column;
+		}
+	}
+
+	&__social {
+		&--icon {
+			fill: $color-primary;
+			width: 3rem;
+			height: 2.8rem;
+			margin-right: 2.5rem;
+			stroke: $color-black;
+			transition: fill 0.4s ease;
+			animation-duration: 1s;
+
+			&:hover {
+				fill: $color-primary-dark;
+				animation-name: bounce;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+}

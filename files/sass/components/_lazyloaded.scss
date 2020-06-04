@@ -1,0 +1,9 @@
+.blur {
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+	transition: filter 2000ms 500ms, -webkit-filter 2000ms 500ms;
+}
+.blur.lazyloaded {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
