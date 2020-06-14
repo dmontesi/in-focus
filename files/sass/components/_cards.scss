@@ -16,6 +16,10 @@
 		&-featured {
 			margin-bottom: 5rem;
 		}
+
+		@include responsive(phone) {
+			height: 36rem;
+		}
 	}
 
 	&--pricing {
@@ -219,6 +223,10 @@
 		height: 50rem;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
+
+		@include responsive(phone) {
+			height: 36rem;
+		}
 
 		&:after {
 			content: '';
