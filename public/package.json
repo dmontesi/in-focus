@@ -4,22 +4,23 @@
 	"description": "Landing page for InFocus Real Estate Marketing",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass sass/main.scss css/style.css -w",
-		"devserver": "live-server --browser=firefox",
-		"start": "npm-run-all --parallel devserver watch:sass",
-		"compile:sass": "node-sass sass/main.scss css/style.comp.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-		"compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-		"build:css": "npm-run-all compile:sass prefix:css compress:css"
+		"watch": "sass sass/main.scss css/style.css -w",
+		"devserver": "live-server",
+		"start": "npm-run-all --parallel devserver watch",
+		"compile": "sass sass/main.scss css/style.comp.css",
+		"concat": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+		"prefix": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+		"compress": "sass css/style.prefix.css css/style.css --style=compressed",
+		"build": "npm-run-all compile concat prefix:css compress"
 	},
 	"author": "Dan Montesinos",
 	"license": "ISC",
 	"devDependencies": {
 		"autoprefixer": "^7.1.4",
 		"concat": "^1.0.3",
-		"node-sass": "^4.13.1",
 		"npm-run-all": "^4.1.1",
-		"postcss-cli": "^4.1.1"
+		"postcss-cli": "^4.1.1",
+		"sass": "^1.53.0"
 	},
 	"dependencies": {
 		"imagemin": "^6.1.0",
