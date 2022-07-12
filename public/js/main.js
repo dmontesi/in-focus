@@ -1,0 +1,34 @@
+// 1. Mission Section Scrolling - Tied to handleScroll method
+
+Vue.directive('scroll', {
+	inserted: function (el, binding) {
+		let f = function (evt) {
+			if (binding.value(evt, el)) {
+				window.removeEventListener('scroll', f);
+			}
+		};
+		window.addEventListener('scroll', f);
+	},
+});
+
+// main app
+new Vue({
+	el: '#app',
+	methods: {
+		handleScroll: function (evt, el) {
+			if (window.scrollY > 50) {
+				el.setAttribute('style', 'opacity: 1; transform: translate3d(0, -10px, 0)');
+			}
+			return window.scrollY > 100;
+		},
+	},
+});
+
+// 2. JQUERY - Circle
+
+$(window).scroll(function () {
+	var wScroll = $(this).scrollTop();
+	$('.section-pricing--circle').css({
+		transform: 'translate(-50%, -' + wScroll / 80 + '%)',
+	});
+});

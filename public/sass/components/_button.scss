@@ -1,0 +1,14 @@
+.btn {
+	font-size: 1.4rem;
+	background-color: $color-primary;
+	color: $color-white;
+	padding: 1.5rem 3rem;
+	text-decoration: none;
+
+	&--small {
+		color: $color-primary;
+		background-color: transparent;
+		padding: 0;
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,74 @@
+.section-about {
+	padding: 20rem 0 25rem;
+
+	@include responsive(tab-port) {
+		padding: 20rem 0 0;
+	}
+
+	@include responsive(phone) {
+		padding: 12.5rem 0 0;
+	}
+}
+
+.section-services {
+	padding: 15rem 0;
+	background-image: radial-gradient(
+			rgba($color-secondary-light, 0.66),
+			rgba($color-secondary-dark, 0.66)
+		),
+		url(../img/services.jpg);
+	background-size: cover;
+
+	@include responsive(phone) {
+		padding: 12.5rem 0;
+	}
+}
+
+.section-pricing {
+	padding: 15rem 0;
+	z-index: 1;
+	position: relative;
+	margin: auto;
+
+	&--circle {
+		width: 80rem;
+		height: 80rem;
+		background-color: rgba($color-gray, 0.4);
+		background-repeat: no-repeat;
+
+		position: absolute;
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50% -50%);
+		z-index: -2;
+	}
+
+	@include responsive(tab-port) {
+		padding: 15rem 0 7rem;
+	}
+
+	@include responsive(phone) {
+		padding: 12.5rem 0 0;
+	}
+}
+
+.section-samples {
+	padding: 0rem 0 0;
+
+	@include responsive(phone) {
+		padding: 5rem 0;
+	}
+}
+
+.section-work {
+	padding: 15rem 0 20rem;
+
+	@include responsive(tab-port) {
+		padding: 15rem 0 0;
+	}
+}
+
+.section-quote {
+	padding: 0;
+}

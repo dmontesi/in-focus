@@ -1,0 +1,84 @@
+.composition {
+	height: 20rem;
+
+	@include responsive(tab-land) {
+		margin-right: 5rem;
+	}
+
+	@include responsive(tab-port) {
+		margin-right: 0;
+	}
+
+	&__photo {
+		width: 85%;
+		border-radius: 50% 50%;
+		position: relative;
+		transition: all 0.2s;
+		outline-offset: 2rem;
+		transition: all 400ms ease;
+		padding: 2rem;
+
+		@include responsive(tab-land) {
+			width: 75%;
+			padding: 1.5rem;
+			// border: 1px solid red;
+		}
+
+		@include responsive(tab-port) {
+			float: left;
+			position: relative;
+			width: 60%;
+			box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+		}
+
+		&--1 {
+			left: 0;
+			top: -5rem;
+			z-index: 2;
+			border: 1px solid $color-primary;
+			background-color: $color-white;
+
+			@include responsive(tab-land) {
+				left: -5rem;
+			}
+
+			@include responsive(tab-port) {
+				top: 2.5rem;
+				left: 20rem;
+				transform: scale(1.1);
+			}
+
+			@include responsive(phone) {
+				left: 16rem;
+			}
+		}
+
+		&--2 {
+			left: 15rem;
+			bottom: 23rem;
+			z-index: 1;
+			border: 1px solid $color-primary;
+			background-color: $color-white;
+
+			@include responsive(tab-land) {
+				left: 10rem;
+				bottom: 15rem;
+			}
+
+			@include responsive(tab-port) {
+				top: -10rem;
+				left: 0rem;
+				transform: scale(1.1);
+				z-index: 100;
+			}
+		}
+
+		&:hover {
+			border: 1px solid $color-primary;
+			background: $color-white;
+			padding: 2rem;
+			transform: scale(1.1) translateY(-0.9rem);
+			z-index: 3;
+		}
+	}
+}

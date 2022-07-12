@@ -1,0 +1,159 @@
+header {
+	position: absolute;
+	display: block;
+	z-index: 1;
+}
+
+.header {
+	height: 100vh;
+	position: relative;
+	background: radial-gradient(
+			rgba($color-secondary-light, 0.46),
+			rgba($color-secondary-dark, 0.66)
+		),
+		url(../img/bathroom-1.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-content: center;
+	justify-content: flex-start;
+
+	@include responsive(phone) {
+		background: radial-gradient(
+				rgba($color-secondary-light, 0.46),
+				rgba($color-secondary-dark, 0.66)
+			),
+			url(../img/small/bathroom-1.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
+	&::before {
+		content: '';
+		border-left: 1px solid $color-primary;
+		height: 50rem;
+		width: $grid-width;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: line 5s ease-in-out 1;
+		overflow-x: hidden;
+
+		@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em) and (max-width: 90em),
+			only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) and (max-width: 90em),
+			only screen and (min-width: 90em) {
+			height: 37rem;
+		}
+
+		@include responsive(tab-land) {
+			height: 37rem;
+			width: 100rem;
+			left: 51.5%;
+		}
+
+		@include responsive(tab-port) {
+			height: 50rem;
+			width: 50rem;
+			left: 51.5%;
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+			height: 35rem;
+		}
+	}
+
+	&::after {
+		content: '';
+		border-left: 1px solid $color-primary;
+		height: 50rem;
+		width: $grid-width;
+		position: absolute;
+		bottom: 0%;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: line 5s ease-in-out 1;
+
+		@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+			only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+			only screen and (min-width: 125em) {
+			height: 37rem;
+		}
+
+		@include responsive(tab-land) {
+			height: 37rem;
+			width: 100rem;
+			left: 51.5%;
+		}
+
+		@include responsive(tab-port) {
+			height: 50rem;
+			width: 50rem;
+			left: 51.5%;
+		}
+
+		@include responsive(phone) {
+			height: 35rem;
+			width: 35rem;
+		}
+	}
+
+	&__textbox {
+		width: $grid-width;
+		position: absolute;
+		top: 49.5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $color-white;
+		animation: moveInRight 2.5s ease-in-out 1;
+
+		@include responsive(tab-land) {
+			left: 56.5%;
+			animation: moveInRightLaptop 2.5s ease-in-out 1;
+		}
+
+		@include responsive(tab-port) {
+			width: 50rem;
+			position: absolute;
+			top: 49.5%;
+			left: 50%;
+			animation: moveInRight 2.5s ease-in-out 1;
+			transform: translate(-50%, -50%);
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+		}
+
+		h1 {
+			line-height: 1.2;
+		}
+	}
+
+	&__social {
+		width: $grid-width;
+		position: absolute;
+		top: 88.5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid transparent;
+		display: flex;
+		justify-content: flex-end;
+		align-items: baseline;
+
+		@include responsive(tab-land) {
+			width: 100rem;
+		}
+
+		@include responsive(tab-port) {
+			width: 50rem;
+			justify-content: center;
+		}
+
+		&--icon {
+			fill: $color-white;
+			width: 3rem;
+			height: 2.8rem;
+		}
+	}
+}

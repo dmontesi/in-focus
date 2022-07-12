@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html,
+body {
+	@include responsive(tab-port) {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+}
+
+html {
+	font-size: 62.5%; // 1rem = 10px/16px = 62.5% (0.625)
+
+	@include responsive(tab-land) {
+		// width < 1200
+		font-size: 56.25%; //1rem = 9px/16px = 56.25%
+	}
+
+	@include responsive(tab-port) {
+		// width < 900
+		font-size: 50%; // 1rem = 8px/16px = 50%
+	}
+
+	@include responsive(big-desk) {
+		// width > 1800
+		font-size: 68%; // 1rem = 11px/16px = 68%
+	}
+}
+
+body {
+	box-sizing: border-box;
+}
+
+::selection {
+	background-color: $color-primary;
+	color: $color-white;
+}

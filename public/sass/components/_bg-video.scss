@@ -1,0 +1,28 @@
+.bg-video {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 60vh;
+	width: 100%;
+	overflow: hidden;
+
+	@include responsive(tab-port) {
+		height: 40vh;
+		top: 5rem;
+	}
+
+	@include responsive(phone) {
+		height: auto;
+		top: 10rem;
+	}
+
+	&__content {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		@include responsive(phone) {
+			height: auto;
+		}
+	}
+}

@@ -1,0 +1,67 @@
+.footer {
+	background-color: $color-secondary-dark;
+	color: $color-white;
+	padding: 15rem 0;
+
+	&__navigation {
+		width: 50%;
+	}
+
+	@include responsive(phone) {
+		padding: 8rem;
+	}
+
+	&__list {
+		list-style-type: none;
+		width: $grid-width;
+		padding: 2rem 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		@include responsive(tab-port) {
+			max-width: 50rem;
+			padding: 0 3rem;
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		font-size: 1.5rem;
+		font-weight: 300;
+		text-align: center;
+
+		@include responsive(phone) {
+			padding-top: 2rem;
+		}
+	}
+
+	&__link {
+		color: $color-primary-dark;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	&__copyright {
+		width: $grid-width;
+		color: $color-primary;
+		font-weight: 300;
+		font-size: 1.4rem;
+		padding: 0 20rem;
+		text-align: center;
+
+		@include responsive(tab-port) {
+			max-width: 50rem;
+			padding: 0 0rem;
+		}
+
+		@include responsive(phone) {
+			max-width: 35rem;
+			flex-direction: column;
+		}
+	}
+}

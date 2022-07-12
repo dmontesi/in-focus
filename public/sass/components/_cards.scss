@@ -1,0 +1,272 @@
+.card {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	transition: all 0.3s ease-in;
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+
+	&--service {
+		height: 43rem;
+		background-color: $color-white;
+		&:hover {
+			transform: translateY(-1rem);
+		}
+	}
+
+	&--pricing {
+		height: 50rem;
+	}
+
+	&__side {
+		transition: all 0.8s ease;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50rem;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		&--front {
+			background-color: $color-white;
+			color: $color-black;
+			box-shadow: 1px 1px 3px rgba($color-black, 0.3);
+		}
+
+		&--back {
+			color: $color-white;
+			background-color: $color-black;
+			transform: rotateY(180deg);
+		}
+
+		&--heading {
+			width: 80%;
+			background: $color-primary;
+			position: relative;
+			left: 50%;
+			top: -30px;
+			transform: translateX(-50%);
+			color: $color-white;
+			padding: 1rem 0;
+			border-radius: 3rem 0 3rem;
+
+			&--1 {
+				background: $color-secondary-light;
+			}
+
+			&--3 {
+				background: $color-secondary-dark;
+			}
+		}
+	}
+
+	&__picture {
+		background-size: cover;
+		height: 23rem;
+
+		&--1 {
+			background-image: url(../img/small/vtour.jpg);
+		}
+
+		&--2 {
+			background-image: url(../img/small/photo.jpg);
+		}
+
+		&--3 {
+			background-image: url(../img/small/websites.jpg);
+		}
+
+		&--4 {
+			background-image: url(../img/small/render-in1.jpg);
+		}
+
+		&--5 {
+			background-image: url(../img/small/design.jpg);
+		}
+
+		&--6 {
+			background-image: url(../img/small/marketing.jpg);
+		}
+	}
+
+	&__icon--box {
+		background-size: cover;
+		height: 23rem;
+		width: 100%;
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 55%;
+			width: 200%;
+			height: 60%;
+			opacity: 0.5;
+			z-index: 1;
+			border-radius: 50%;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 55%;
+			width: 200%;
+			height: 60%;
+			opacity: 0.4;
+			z-index: 1;
+			border-radius: 50%;
+		}
+	}
+
+	&__icon--box--1 {
+		background: $color-secondary-lighter;
+
+		&::before {
+			content: '';
+			background-color: $color-secondary-light;
+			transform: skewY(7deg);
+		}
+
+		// &::after {
+		// 	content: '';
+		// 	background-color: $color-secondary-light;
+		// 	transform: skewY(-7deg);
+		// }
+	}
+
+	&__icon--box--2 {
+		background: $color-primary;
+		&::before {
+			content: '';
+			background-color: $color-primary-dark;
+			transform: skewY(7deg);
+		}
+		// &::after {
+		// 	content: '';
+		// 	background-color: $color-primary-dark;
+		// 	transform: skewY(-7deg);
+		// }
+	}
+
+	&__icon--box--3 {
+		background: $color-secondary-dark;
+		&::before {
+			content: '';
+			background-color: $color-secondary-light;
+			transform: skewY(7deg);
+		}
+		// &::after {
+		// 	content: '';
+		// 	background-color: $color-secondary-light;
+		// 	transform: skewY(-7deg);
+		// }
+	}
+
+	&__icon {
+		fill: $color-white;
+		width: 10rem;
+		height: 10rem;
+		z-index: 2;
+	}
+
+	&__details {
+		padding: 0 5rem;
+
+		ul {
+			list-style: none;
+		}
+
+		ul > li {
+			font-size: 1.4rem;
+			font-weight: 300;
+			font-style: normal;
+
+			&::before {
+				content: '';
+				display: inline-block;
+				height: 1rem;
+				width: 1rem;
+				margin-right: 0.7rem;
+
+				//Older browsers
+				background-image: url(../img/chevron-thin-right.svg);
+				background-size: cover;
+
+				//Newer browsers - Masks
+				@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+					background-color: var(--color-primary);
+					-webkit-mask-image: url(../img/chevron-thin-right.svg);
+					-webkit-mask-size: cover;
+					mask-image: url(../img/chevron-thin-right.svg);
+					mask-size: cover;
+				}
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0);
+	}
+
+	&:hover &__picture--1 {
+		background-image: url(../img/virtual_hover.png);
+	}
+
+	&:hover &__picture--2 {
+		background-image: url(../img/video_hover.png);
+	}
+
+	&:hover &__picture--3 {
+		background-image: url(../img/website_hover.png);
+	}
+
+	&:hover &__picture--4 {
+		background-image: url(../img/render_hover.png);
+	}
+
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		text-align: center;
+	}
+
+	&__price-box {
+		margin-bottom: 8rem;
+		color: $color-white;
+	}
+
+	&__price-only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		color: $color-primary;
+	}
+
+	&__price-value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
+
+	&__price-details {
+		font-size: 1.4rem;
+		font-weight: 300;
+		width: 60%;
+		margin: 0 auto;
+		color: $color-gray;
+	}
+}
