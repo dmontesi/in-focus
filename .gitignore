@@ -47,6 +47,11 @@ build/Release
 # Dependency directories
 node_modules/
 
+# Videos
+*.mp4
+*.ogg
+*.webm
+
 # Optional npm cache directory
 .npm
 
